@@ -1,0 +1,7 @@
+services:
+  qarzhy-tracker-server:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      OPEN_AI_AUTHORIZATION_TOKEN: ${OPEN_AI_AUTHORIZATION_TOKEN}
