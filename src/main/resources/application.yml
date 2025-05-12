@@ -1,1 +1,22 @@
-spring.application.name=code-adviser
+spring:
+  application:
+    name: code-adviser
+
+  cloud:
+    openfeign:
+      client:
+        config:
+          open-ai:
+            url: ${code-adviser.open-ai.url}
+            connectTimeout: 60000
+            readTimeout: 60000
+
+code-adviser:
+  open-ai:
+    url: https://api.openai.com/v1/chat/completions
+    token: ${OPEN_AI_AUTHORIZATION_TOKEN}
+    default-settings:
+      model: gpt-4o
+      temperature: 1
+      n: 1
+      role: user

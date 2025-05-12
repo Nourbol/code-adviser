@@ -1,6 +1,6 @@
-package kz.edu.astanait.qarzhytracker.service.impl;
+package kz.edu.astanait.codeadviser.service.impl;
 
-import kz.edu.astanait.qarzhytracker.service.PromptSender;
+import kz.edu.astanait.codeadviser.service.PromptSender;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

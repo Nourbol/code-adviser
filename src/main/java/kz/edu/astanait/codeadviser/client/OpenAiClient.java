@@ -1,8 +1,8 @@
-package kz.edu.astanait.qarzhytracker.client;
+package kz.edu.astanait.codeadviser.client;
 
 import feign.RequestInterceptor;
-import kz.edu.astanait.qarzhytracker.domain.OpenAiSendPromptRequest;
-import kz.edu.astanait.qarzhytracker.domain.OpenAiSendPromptResponse;
+import kz.edu.astanait.codeadviser.domain.OpenAiSendPromptRequest;
+import kz.edu.astanait.codeadviser.domain.OpenAiSendPromptResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
@@ -19,7 +19,7 @@ public interface OpenAiClient {
     class Configuration {
 
         @Bean
-        public RequestInterceptor authorizationRequestInterceptor(final @Value("${qarzhy-tracker.open-ai.token}") String token) {
+        public RequestInterceptor authorizationRequestInterceptor(final @Value("${code-adviser.open-ai.token}") String token) {
             return requestTemplate -> requestTemplate.header(HttpHeaders.AUTHORIZATION, "Bearer %s".formatted(token));
         }
     }

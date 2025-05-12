@@ -1,4 +1,4 @@
-package kz.edu.astanait.qarzhytracker.domain;
+package kz.edu.astanait.codeadviser.domain;
 
 public record OpenAiChoice(OpenAiMessage message) {
 

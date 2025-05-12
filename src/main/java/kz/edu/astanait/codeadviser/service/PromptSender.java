@@ -1,4 +1,4 @@
-package kz.edu.astanait.qarzhytracker.service;
+package kz.edu.astanait.codeadviser.service;
 
 public interface PromptSender {
 

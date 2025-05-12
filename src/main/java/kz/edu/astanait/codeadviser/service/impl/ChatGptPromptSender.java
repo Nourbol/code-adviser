@@ -1,10 +1,10 @@
-package kz.edu.astanait.qarzhytracker.service.impl;
+package kz.edu.astanait.codeadviser.service.impl;
 
-import kz.edu.astanait.qarzhytracker.client.OpenAiClient;
-import kz.edu.astanait.qarzhytracker.configuration.OpenAiDefaultSettingsConfigProperties;
-import kz.edu.astanait.qarzhytracker.domain.OpenAiMessage;
-import kz.edu.astanait.qarzhytracker.domain.OpenAiSendPromptRequest;
-import kz.edu.astanait.qarzhytracker.service.PromptSender;
+import kz.edu.astanait.codeadviser.client.OpenAiClient;
+import kz.edu.astanait.codeadviser.config.OpenAiDefaultSettingsConfigProperties;
+import kz.edu.astanait.codeadviser.domain.OpenAiMessage;
+import kz.edu.astanait.codeadviser.domain.OpenAiSendPromptRequest;
+import kz.edu.astanait.codeadviser.service.PromptSender;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

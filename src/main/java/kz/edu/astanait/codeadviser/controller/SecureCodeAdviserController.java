@@ -1,29 +1,20 @@
-package kz.edu.astanait.qarzhytracker.controller;
+package kz.edu.astanait.codeadviser.controller;
 
-import kz.edu.astanait.qarzhytracker.service.impl.SecureCodeAdviser;
+import kz.edu.astanait.codeadviser.service.impl.SecureCodeAdviser;
 import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 public class SecureCodeAdviserController {
 
     private final SecureCodeAdviser secureCodeAdviser;
 
-    @GetMapping("/demo/code")
-    public String showForm() {
-        return "codeForm";
-    }
-
-    @PostMapping("/secure")
-    public String secureCode(@RequestParam("code") String code, Model model) {
-        String result = secureCodeAdviser.askForAdvice(code);
-        model.addAttribute("originalCode", code);
-        model.addAttribute("securedCode", result);
-        return "codeForm";
+    @PostMapping(value = "/api/v1/code-advice", consumes = MediaType.TEXT_PLAIN_VALUE, produces = MediaType.TEXT_PLAIN_VALUE)
+    public String secureCode(@RequestBody String code) {
+        return secureCodeAdviser.askForAdvice(code);
     }
 }
