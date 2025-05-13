@@ -2,6 +2,35 @@ spring:
   application:
     name: code-adviser
 
+  datasource:
+    url: ${CODE_ADVISER_DATASOURCE_URL}
+    username: ${CODE_ADVISER_DATASOURCE_USERNAME}
+    password: ${CODE_ADVISER_DATASOURCE_PASSWORD}
+  flyway:
+    enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  security:
+    token:
+      expire-after: 1h
+
+  mail:
+    host: sandbox.smtp.mailtrap.io
+    port: 587
+    username: ${SMTP_USERNAME}
+    password: ${SMTP_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+
   cloud:
     openfeign:
       client:
